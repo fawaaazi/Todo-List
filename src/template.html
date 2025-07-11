@@ -1,32 +1,115 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do List</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <h1>To Do List</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <link rel="shortcut icon" href="images/logo.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Yusei+Magic&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/4c536a6bd5.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <i class="fas fa-check-double"></i>
+        <h1 class="page-name">Todo List</h1>
+      </div>
+      <button class="button-open-nav" id="button-open-nav">
+        <i class="fas fa-bars"></i>
+      </button>
     </header>
-    <main>
-        <div class="side-content">
-            <button id="inbox-btn">Inbox</button>
-            <button id="today-btn">Today</button>
-            <button id="thisweek-btn">This week</button>
+    <main class="main">
+      <nav class="nav" id="nav">
+        <!-- Default projects -->
+        <div class="default-projects-list">
+          <button class="button-default-project" id="button-inbox-projects">
+            <i class="fas fa-inbox"></i>
+            Inbox
+          </button>
+          <button class="button-default-project" id="button-today-projects">
+            <i class="fas fa-calendar-day"></i>
+            Today
+          </button>
+          <button class="button-default-project" id="button-week-projects">
+            <i class="fas fa-calendar-week"></i>
+            This week
+          </button>
         </div>
-        <div class="content">
-            <div class="side-content-title">
-                <h2>Inbox</h2>
-            </div>
-            <div class="list-items">
-                <button id="add-btn"> Add+</button>
-            </div>
+        <!-- User projects -->
+        <h1 class="projects-title">Projects</h1>
+        <div class="projects-list" id="projects-list"></div>
+        <button class="button-add-project" id="button-add-project">
+          <i class="fas fa-plus"></i>
+          Add Project
+        </button>
+        <div class="add-project-popup" id="add-project-popup">
+          <input
+            class="input-add-project-popup"
+            id="input-add-project-popup"
+            type="text"
+          />
+          <div class="add-project-popup-buttons">
+            <button
+              class="button-add-project-popup"
+              id="button-add-project-popup"
+            >
+              Add
+            </button>
+            <button
+              class="button-cancel-project-popup"
+              id="button-cancel-project-popup"
+            >
+              Cancel
+            </button>
+          </div>
         </div>
+      </nav>
+      <!-- Tasks -->
+     <div class="project-preview" id="project-preview">
+        <h1 id="project-name">Inbox</h1>
+        <div class="tasks-list" id="tasks-list">
+      <button class="button-task" data-task-button="">
+        <div class="left-task-panel">
+          <i class="far fa-circle" aria-hidden="true"></i>
+          <p class="task-content">dfbxv</p>
+          <input type="text" class="input-task-name" data-input-task-name="">
+        </div>
+        <div class="right-task-panel">
+          <p class="due-date" id="due-date">No date</p>
+          <input type="date" class="input-due-date" data-input-due-date="">
+          <i class="fas fa-times" aria-hidden="true"></i>
+        </div>
+      </button></div>
+        <button class="button-add-task" id="button-add-task">
+          <i class="fas fa-plus" aria-hidden="true"></i>
+          Add Task
+        </button>
+        <div class="add-task-popup" id="add-task-popup">
+          <input class="input-add-task-popup" id="input-add-task-popup" type="text">
+          <div class="add-task-popup-buttons">
+            <button class="button-add-task-popup" id="button-add-task-popup">
+              Add
+            </button>
+            <button class="button-cancel-task-popup" id="button-cancel-task-popup">
+              Cancel
+            </button>
+          </div>
+        </div>
+    </div>
     </main>
-    <footer>
-
+    <footer class="footer">
+      <p>Copyright © 2021 michalosman</p>
+      <a href="https://github.com/michalosman" target="_blank">
+        <i class="fab fa-github"></i
+      ></a>
     </footer>
-</body>
+  </body>
 </html>
