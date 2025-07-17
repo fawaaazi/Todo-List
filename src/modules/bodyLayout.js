@@ -1,23 +1,5 @@
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todo List</title>
-    <!-- <link rel="shortcut icon" href="images/logo.png" /> -->
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Yusei+Magic&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      src="https://kit.fontawesome.com/4c536a6bd5.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="index.js" defer></script>
-  </head>
-  <body>
-    <header class="header">
+function getHeaderElements(body){
+   body.innerHTML += `<header class="header">
       <div class="logo">
         <i class="fas fa-check-double"></i>
         <h1 class="page-name">Todo List</h1>
@@ -25,8 +7,12 @@
       <button class="button-open-nav" id="button-open-nav">
         <i class="fas fa-bars"></i>
       </button>
-    </header>
-    <main class="main">
+    </header>`
+}
+
+function getMainElements(body){
+   
+    body.innerHTML += `<main class="main">
       <nav class="nav" id="nav">
         <!-- Default projects -->
         <div class="default-projects-list">
@@ -76,26 +62,6 @@
       <div class="project-preview" id="project-preview">
         <h1 id="project-name">Inbox</h1>
         <div class="tasks-list" id="tasks-list">
-          <button class="button-task" data-task-button="">
-            <div class="left-task-panel">
-              <i class="far fa-circle" aria-hidden="true"></i>
-              <p class="task-content">dfbxv</p>
-              <input
-                type="text"
-                class="input-task-name"
-                data-input-task-name=""
-              />
-            </div>
-            <div class="right-task-panel">
-              <p class="due-date" id="due-date">No date</p>
-              <input
-                type="date"
-                class="input-due-date"
-                data-input-due-date=""
-              />
-              <i class="fas fa-times" aria-hidden="true"></i>
-            </div>
-          </button>
         </div>
         <button class="button-add-task" id="button-add-task">
           <i class="fas fa-plus" aria-hidden="true"></i>
@@ -120,12 +86,23 @@
           </div>
         </div>
       </div>
-    </main>
-    <footer class="footer">
+    </main>`
+}
+
+function getFooterElements(body){
+
+    body.innerHTML +=` <footer class="footer">
       <p>Copyright © 2021 michalosman</p>
       <a href="https://github.com/fawaaazi" target="_blank">
         <i class="fab fa-github"></i
       ></a>
-    </footer>
-  </body>
-</html>
+    </footer>`
+}
+
+export function getBodyElements(){
+    const body = document.querySelector("body");
+    body.innerHTML = ""
+    getHeaderElements(body);
+    getMainElements(body);
+    getFooterElements(body);
+}
