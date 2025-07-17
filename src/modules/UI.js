@@ -23,3 +23,14 @@ function taskListMaker(taskName){
 
           taskList.innerHTML += taskElement
 }
+
+export const uiActions = (function (){
+  function addTask(){
+    const addTaskPopup = document.getElementById("add-task-popup");
+    addTaskPopup.style.display = "block"
+  }
+
+  return{
+    addTask
+  }
+})(); 
